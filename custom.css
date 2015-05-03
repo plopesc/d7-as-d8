@@ -1,0 +1,142 @@
+@media screen {
+  .full .progress div {
+    height: 3px;
+  }
+}
+
+.slide ol li:before, .slide ul li:before {
+  color: #aaa;
+}
+.slide:after {
+  content: none;
+}
+
+.slide.shout h3 {
+  text-align: center;
+  font-size: 2em;
+  font-family: "PT Sans Narrow";
+  color:  #aaa;
+  margin-top: 350px
+}
+
+.slide.wide>div {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+.slide.wide>div>h2 {
+  padding-left: 120px;
+}
+
+.slide.nomargins>div {
+  padding: 0;
+  width: 100%;
+  height:  100%;
+}
+.slide.nomargins>div>h2 {
+  padding-left: 10px;
+  padding-top: 10px;
+  margin-bottom: .3em;
+}
+
+.slide.shadow {
+  text-shadow: 5px 5px 10px #000;
+}
+
+.slide p {
+  margin: 0 0 20px;
+}
+
+.slide ul {
+  margin-bottom: 20px;
+}
+
+img.border {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border: 5px solid #ddf;
+}
+img.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a.credits {
+  position: absolute;
+  bottom: 0;
+  left: 1em;
+  text-decoration: none;
+  border-bottom: 0;
+  font-size: 70%;
+}
+
+.monospace {
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+}
+
+pre[class*="language-"] {
+  padding: .2em;
+  position: relative;
+  overflow-y: auto;
+}
+pre[class*="language-"].line-numbers {
+  padding-left: 2.5em;
+}
+:not(.codeonly) > code[class*="language-"] {
+  max-height: 70%;
+}
+.slide.codeonly>div>h2 {
+  font-size: 1em;
+}
+.codeonly pre[class*="language-"] {
+  height: 582px;
+}
+pre[class*="language-"] > code {
+  font-size: 68%;
+  line-height: 25px;
+}
+
+:not(pre) > code[class*="language-"] {
+  font-size: 85%;
+  background: #ffffff;
+  padding: 0;
+}
+:not(pre) > code[class*="language-"].indent {
+  margin-left: 2em;
+}
+
+pre[class*="language-"] .token.operator,
+pre[class*="language-"] .token.entity,
+pre[class*="language-"] .token.url,
+pre[class*="language-"] .language-css .token.string,
+pre[class*="language-"] .style .token.string,
+pre[class*="language-"] .token.variable {
+  background: #f5f2f0;
+}
+
+
+pre[class*="drupal-"] code:after,
+code[class*="drupal-"]:after {
+  position: absolute;
+  color: #888;
+  font-family: "PT Sans";
+  font-weight: bold;
+  font-size: 140%;
+  right: .1em;
+  bottom: .05em;
+  overflow: hidden;
+}
+pre.drupal-7 code:after,
+code.drupal-7:after {
+  content: "D7";
+}
+pre.drupal-8 code:after,
+code.drupal-8:after {
+  content: "D8";
+}
+
+p.related-session {
+  width: 50%;
+  float:left;
+}

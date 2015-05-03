@@ -1,0 +1,265 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>D7 as D8</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=792, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">
+    <link rel="stylesheet" href="prism.css">
+    <link rel="stylesheet" href="custom.css">
+</head>
+<body class="list">
+<header class="caption">
+    <h1>D7 as D8</h1>
+    <p>Be ready for the next drupal coding paradigm</p>
+</header>
+<section class="slide cover" id="Cover"><div>
+    <h2>Shower Presentation Engine</h2>
+    <p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
+    <img src="pictures/frustrated1024.jpg" alt="">
+    <!--
+        To apply styles to the certain slides
+        set slide ID to get needed elements
+        -->
+    <style>
+        #Cover h2 {
+            margin:30px 0 0;
+            color:#FFF;
+            text-align:center;
+            font-size:70px;
+        }
+        #Cover p {
+            margin:10px 0 0;
+            text-align:center;
+            color:#FFF;
+            font-style:italic;
+            font-size:20px;
+        }
+        #Cover p a {
+            color:#FFF;
+        }
+    </style>
+</div></section>
+<!-- Team -->
+<section class="slide" id="team"><div>
+    <h2>Team</h2>
+    <div class="team-member">
+        <p>Mateu Aguiló</p>
+        <img src="pictures/avatar.gif">
+        <p>Developer at Lullabot</p>
+        <p>@e0ipso</p>
+    </div>
+    <div class="team-member">
+        <p>Pablo López</p>
+        <img src="pictures/avatar.gif">
+        <p>Developer at Bluespark</p>
+        <p>@plopesc</p>
+    </div>
+    <style>
+        #team .team-member {
+            float: left;
+            width: 380px;
+            text-align: center;
+        }
+        #team img {
+            height: 200px;
+        }
+    </style>
+</div></section>
+<!-- Presentation -->
+<section class="slide"><div>
+    <h2>Presentation</h2>
+    <p>Put your text here</p>
+</div></section>
+<!-- History 1 -->
+<section class="slide"><div>
+<p>Mateu: "I really liked the session plugin. I'd like to port the D8 plugin system to D7"</p>
+    <p>Pablo: "That'd be great. I already worked on a small plugin system for field formatters in the past"</p>
+</div></section>
+<!-- History 2 -->
+<section class="slide"><div>
+    <p>Pablo: "Did you finally worked on that plugin system idea?"</p>
+    <p>Mateu: "Not yet"</p>
+    <p>Pablo: "I'd like to use it, I'm going to create a repo for that"</p>
+</div></section>
+<!-- History 3 -->
+<section class="slide"><div>
+    <p>Mateu: "I saw your repo. But I created the REAL one approach"</p>
+    <p>Pablo: "That's AWESOME!!"</p>
+    <p>Both: "Let's create a whole family of modules using plugins for D7"</p>
+</div></section>
+<!-- Motivation -->
+<section class="slide"><div>
+    <h2>Motivations</h2>
+    <ul>
+        <li>Learn about Drupal 8</li>
+        <li>Improve our skills</li>
+        <li>Experimentation</li>
+        <li>No need to waste free time or money</li>
+        <li><strong>Have fun</strong></li>
+    </ul>
+    </div></section>
+<!-- Sliced bread -->
+<section class="slide"><div>
+    <h2>We are not discovering sliced bread</h2>
+    <ul>
+        <li>There are already modules helping us:</li>
+        <ul>
+            <li>xautoload, composer manager</li>
+        </ul>
+        <li>Other people is writing blog posts about this:</li>
+        <ul>
+            <li>https://www.previousnext.com.au/tags/drupal-8-now</li>
+        </ul>
+        <li>Some other ideas?</li>
+    </ul>
+</div></section>
+<!-- Use case -->
+<section class="slide"><div>
+    <h2>Use case example</h2>
+    <img src="pictures/twistersfooter.png" style="float: right; width: 220px;">
+    <h3 style="font-size: 32px;">Somos twisters billing system</h3>
+    <ul>
+        <li>Non profit fundraising company</li>
+        <li>Multiple non profit company</li>
+        <li>Complex bonus system for callers</li>
+        <li>Multiple roles</li>
+    </ul>
+    <div>
+        <div style="float: left; width: 150px; height:150px"><img  style="width: 120px; padding-top: 25px;" src="pictures/msf.jpg"></div>
+        <div style="float: left; width: 150px; height:150px"><img style="width: 120px; padding-top: 25px;" src="pictures/aldeas.jpg"></div>
+        <div style="float: left; width: 150px; height:150px"><img style="width: 120px;" src="pictures/medicos.jpg"></div>
+    </div>
+</div></section>
+<!-- Hot topics -->
+<section class="slide"><div>
+    <h2>Hot topics</h2>
+    <img src="pictures/spam.jpg" style="float: right; width: 380px; padding-top: 30px;">
+    <ul>
+        <li>Custom plugins for different billing calculators</li>
+    <ul>
+        <li>Plug</li>
+    </ul>
+        <li>Multiple custom entity types</li>
+        <ul>
+            <li>Entity boilerplate</li>
+        </ul>
+        <li>Custom field types for bonuses and penalties</li>
+        <ul>
+            <li>Plug Field</li>
+        </ul>
+    </ul>
+</div></section>
+<!-- Field diagram -->
+<section class="slide cover"><div>
+    <img src="pictures/diagram_scale.jpg" alt="">
+    <h2>Field diagram</h2>
+    <ul style="margin: 260px 0; font-size: 22px;">
+        <li>7 Field type classes</li>
+        <li>1 main abstract class</li>
+        <li>4 Interfaces</li>
+        <li>Extra features for invoicing tasks</li>
+    </ul>
+</div></section>
+<!-- Wire mess -->
+<section class="slide shout cover shadow" id="frustrated"><div>
+    <h2>I did it<br><br><br>in a .module file</h2>
+    <img src="pictures/frustrated1024.jpg" alt="">
+    <style>
+        #frustrated h2 {
+            color: white;
+        }
+    </style>
+</div></section>
+<!-- Show me the code -->
+<section class="slide shout cover shadow" id="code"><div>
+    <h2>...but show me<br><br>the code!</h2>
+    <img src="pictures/show_code_scale.jpg" alt="">
+    <style>
+        #code h2 {
+            color: white;
+        }
+    </style>
+</div></section>
+<!-- Encourage -->
+<section class="slide"><div>
+    <h2>Why we do love this stuff</h2>
+    <ul>
+        <li>Maintainability</li>
+        <li>Have fun learning a new way to solve problems</li>
+        <li>Investigate and discover new programming patterns</li>
+        <li>Be ready for all the new Drupal 8 coding paradigms</li>
+    </ul>
+    <div class="next">
+    <h2>Teamwork and give back to the community</h2>
+        <figure>
+            <blockquote>
+                <p>Find a nice inspirational quote for this space</p>
+            </blockquote>
+            <figcaption>Author</figcaption>
+        </figure>
+        </div>
+</div></section>
+<!-- Conclusions -->
+<section class="slide"><div>
+    <h2>Conclusions</h2>
+    <ul>
+        <li>Don't need to wait more to open your mind</li>
+        <li>Try to learn new things to avoid burn out</li>
+        <li>Get out of Drupal island to learn and improve your skills</li>
+    </ul>
+    <div class="next">
+        <h2>Thirst for knowledge is basic to be able to be up to date</h2>
+    </div>
+</div></section>
+<!-- Resources -->
+<section class="slide"><div>
+    <h2>Resources</h2>
+    <ul>
+        <li><strong>Drupal modules:</strong> XAutoload, Composer Manager, COOL, Typed Entity</li>
+        <li><strong>Plug Repository:</strong> https://github.com/Plug-Drupal</li>
+        <li><strong>Entity Boilerplate Repository:</strong> https://github.com/plopesc/entity_boilerplate</li>
+        <li><strong>Composer to build Drupal 7 projects:</strong> http://cambrico.net/drupal/using-composer-to-build-your-drupal-7-projects</li>
+    </ul>
+</div></section>
+<!-- Thank you -->
+<section class="slide cover shadow shout"><div id="uva">
+    <img src="pictures/uva2_bn.jpg">
+    <h2>Thanks!</h2>
+    <style>
+        #uva h2 {
+            color: white;
+            margin-top: 120px;
+            text-align: center;
+        }
+    </style>
+</div></section>
+<section class="slide shout shadow cover" id="questions"><div>
+    <img src="pictures/orange.jpg">
+    <h2>Questions?</h2>
+    <style>
+        #questions h2 {
+            color: white;
+            margin-top: 110px;
+        }
+    </style>
+</div></section>
+<!--
+    To hide progress bar from entire presentation
+    just remove “progress” element.
+    -->
+<div class="progress"><div></div></div>
+<script src="shower/shower.min.js"></script>
+<script src="prism.js"></script>
+<script src="prism_yaml.js"></script>
+<script>
+    var pre = document.querySelectorAll("section.codeonly pre");
+    for (var i = 0; i < pre.length; i++) {
+        pre[i].className += " line-numbers";
+    }
+</script>
+<!-- Copyright © 2014 Yours Truly, Famous Inc. -->
+<!-- Photos by John Carey, fiftyfootshadows.net -->
+</body>
+</html>
