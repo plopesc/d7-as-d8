@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">
     <link rel="stylesheet" href="prism.css">
     <link rel="stylesheet" href="custom.css">
+    <style>
+        a {
+            background: none;
+        }
+    </style>
 </head>
 <body class="list">
 <header class="caption">
@@ -15,29 +20,27 @@
     <p>Be ready for the next drupal coding paradigm</p>
 </header>
 <section class="slide cover" id="Cover"><div>
-    <h2>Shower Presentation Engine</h2>
-    <p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
-    <img src="pictures/frustrated1024.jpg" alt="">
+    <h2>D7 as D8</h2>
+    <p>Pablo López Escobés<br />#D7asD8</p>
+    <img src="pictures/intro_scale.png" alt="">
     <!--
         To apply styles to the certain slides
         set slide ID to get needed elements
         -->
     <style>
         #Cover h2 {
-            margin:30px 0 0;
-            color:#FFF;
+            margin:260px 0 0;
+            color:#000;
             text-align:center;
-            font-size:70px;
+            font-size:76px;
         }
         #Cover p {
-            margin:10px 0 0;
+            margin:50px 0 0;
             text-align:center;
-            color:#FFF;
+            color:#000;
             font-style:italic;
-            font-size:20px;
-        }
-        #Cover p a {
-            color:#FFF;
+            font-size:30px;
+            line-height: 40px;
         }
     </style>
 </div></section>
@@ -106,13 +109,76 @@
     <ul>
         <li>There are already modules helping us:</li>
         <ul>
-            <li>xautoload, composer manager</li>
+            <li>X Autoload, Composer manager</li>
         </ul>
         <li>Other people is writing blog posts about this:</li>
         <ul>
-            <li>https://www.previousnext.com.au/tags/drupal-8-now</li>
+            <li><a href="https://www.previousnext.com.au/tags/drupal-8-now">https://www.previousnext.com.au/tags/drupal-8-now</a></li>
         </ul>
         <li>Some other ideas?</li>
+    </ul>
+</div></section>
+<!-- Why Plugins? -->
+<section class="slide"><div>
+    <h2>Why Plugins?</h2>
+    <ul>
+        <li>Plugins are a key component in D8</li>
+        <ul>
+            <li>Put examples here</li>
+        </ul>
+        <li>D8 plugin system is Drupal agnostic</li>
+        <li>A lot of problems can be solved using plugins</li>
+    </ul>
+    <div class="next">
+        <img src="pictures/plug.png" style="float: right; height:200px; padding-right: 100px;">
+        <h2 style="padding-top: 100px;">We created Plug Family</h2>
+
+    </div>
+</div></section>
+<!-- Plug architecture -->
+<section class="slide"><div>
+    <h2>Plug architecture</h2>
+    <ul>
+        <li>Packagist package created from D8 source code: <strong><a href="https://packagist.org/packages/drupal/d7-plugin">drupal/d7-plugin</a></strong></li>
+        <li>Download and register the package to be used <strong><a href="https://www.drupal.org/project/composer_manager">Composer manager</a></strong></li>
+        <li>Plug module provides some glue code to integrate the plugin system</li>
+        <ul>
+            <li>Register PSR-4 namespace for classes provided <strong><a href="https://www.drupal.org/project/xautoload">X Autoload</a></strong></li>
+            <li>Base classes to make easier the plugin creation</li>
+        </ul>
+    </ul>
+</div></section>
+<!-- Plugin types -->
+<section class="slide"><div>
+    <h2>Plugin discovery types</h2>
+        <p><strong>Annotation based plugins</strong><br />Plugin classes are annotated and placed in a defined namespace.</p>
+    Class Acme:
+    <pre class=" language-php"><code class="language-php">namespace Drupal\plug_example\Plugin\name;
+/**
+* Class Acme
+* @Name(
+*   id = "acme",
+*   company = TRUE
+* )
+*/
+class Acme extends NameBase implements NameInterface {</code></pre>
+</div></section>
+<!-- Plugin types -->
+<section class="slide"><div>
+    <h2>Plugin discovery types</h2>
+        <p><strong>YAML based discovery</strong><br />Plugins are listed in YAML files. This is mainly useful if all plugins use the same class.</p>
+    <pre class=" language-yaml"><code class="language-yaml">apple:
+  label: Apple
+  sugar: 'low'</code></pre>
+    Class Fruit:
+    <pre class=" language-php"><code class="language-php">namespace Drupal\plug_example\Plugin\fruit;
+class Fruit extends PluginBase implements FruitInterface {</code></pre>
+</div></section>
+<!-- Typed Entity -->
+<section class="slide"><div>
+    <h2>Typed Entity</h2>
+    <ul>
+        <li>Put your text here</li>
     </ul>
 </div></section>
 <!-- Use case -->
@@ -195,9 +261,9 @@
     <h2>Teamwork and give back to the community</h2>
         <figure>
             <blockquote>
-                <p>Find a nice inspirational quote for this space</p>
+                <p>Alone we can do so little; together we can do so much</p>
             </blockquote>
-            <figcaption>Author</figcaption>
+            <figcaption>Helen Keller</figcaption>
         </figure>
         </div>
 </div></section>
@@ -235,13 +301,14 @@
         }
     </style>
 </div></section>
-<section class="slide shout shadow cover" id="questions"><div>
-    <img src="pictures/orange.jpg">
+<section class="slide shout cover" id="questions"><div>
+    <img src="pictures/intro_scale.png">
     <h2>Questions?</h2>
     <style>
         #questions h2 {
-            color: white;
-            margin-top: 110px;
+            color: black;
+            margin-top: 70px;
+            margin-left: 65px;
         }
     </style>
 </div></section>
