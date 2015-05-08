@@ -49,8 +49,8 @@
     <h2>Team</h2>
     <div class="team-member">
         <p>Mateu Aguiló</p>
-        <img src="pictures/avatar.gif">
-        <p>Developer at Lullabot</p>
+        <img src="pictures/me.jpeg">
+        <p>Senior developer at Lullabot</p>
         <p><a href="http://drupal.org/u/e0ipso">@e0ipso</a></p>
     </div>
     <div class="team-member">
@@ -142,9 +142,10 @@
         <li>D8 plugin system is Drupal agnostic</li>
         <li>A lot of problems can be solved using plugins</li>
     </ul>
+    <h3 class="next">It started with plugins, but then it spread!</h3>
     <div class="next">
-        <img src="pictures/plug.png" style="float: right; height:200px; padding-right: 100px;">
-        <h2 style="padding-top: 100px;">We created Plug Family</h2>
+        <img src="pictures/plug.png" style="float: right; height:150px; padding-right: 150px;">
+        <h2 style="padding-top: 50px;">We created Plug Family</h2>
 
     </div>
 </div></section>
@@ -199,10 +200,34 @@ class Fruit extends PluginBase implements FruitInterface {</code></pre>
 </div></section>
 <!-- Typed Entity -->
 <section class="slide"><div>
-    <h2>Typed Entity</h2>
+    <h2>Typed Entity (does not need Plug)</h2>
     <ul>
-        <li>Put your text here</li>
+      <li>Organize your custom code around entities in objects.</li>
+      <li>Forget <code>my_module_process_article_images($nid)</code>.</li>
+      <li>Use <code>$article->processImage()</code> instead.</li>
     </ul>
+    <ul>
+      <li>It's a <strong>very</strong> lightweight module. Can complement Plug.</li>
+      <li>Code easier to maintain.</li>
+      <li>Testable code.</li>
+      <li>More re-use of code: Code is centralized &amp; You can use base classes.</li>
+      <li>Objects are easy to pass around.</li>
+    </ul>
+</div></section>
+<!-- Typed Entity Example -->
+<section class="slide"><div>
+    <h2>Typed Entity: Example code</h2>
+    <h3>1. Create the class with your custom methods</h3>
+    <pre class=" language-php"><code class="language-php">namespace Drupal\my_module\TypedEntity;
+class TypedNodeArticle extends TypedNode implements TypedNodeInterface {</code></pre>
+    <h3>2. Use that object in your regular Drupal code</h3>
+    <pre class=" language-php"><code class="language-php">function hook_drupalcamp_blow_mind($oop) {
+  $article = TypedEntityManager::create();
+  foreach ($article->getRelatedArticles() as $related) {
+    // $related->getImage() returns a TypedFileImage!
+    $image_urls[] = $related->getImage()->getUrl();
+  }
+}</code></pre>
 </div></section>
 <!-- Use case -->
 <section class="slide"><div>
