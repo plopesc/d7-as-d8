@@ -83,28 +83,27 @@
         }
     </style>
 </div></section>
-<!-- Presentation -->
-<section class="slide"><div>
-    <h2>Presentation</h2>
-    <p>Put your text here</p>
+<!-- Onnce upon a time -->
+<section class="slide cover"><div>
+    <img src="pictures/once1024.jpg" alt="">
 </div></section>
-<!-- History 1 -->
+<!-- History 1 
 <section class="slide"><div>
 <p>Mateu: "I really liked the session plugin. I'd like to port the D8 plugin system to D7"</p>
     <p>Pablo: "That'd be great. I already worked on a small plugin system for field formatters in the past"</p>
 </div></section>
-<!-- History 2 -->
+<!-- History 2 
 <section class="slide"><div>
     <p>Pablo: "Did you finally worked on that plugin system idea?"</p>
     <p>Mateu: "Not yet"</p>
     <p>Pablo: "I'd like to use it, I'm going to create a repo for that"</p>
 </div></section>
-<!-- History 3 -->
+<!-- History 3 
 <section class="slide"><div>
     <p>Mateu: "I saw your repo. But I created the REAL one approach"</p>
     <p>Pablo: "That's AWESOME!!"</p>
     <p>Both: "Let's create a whole family of modules using plugins for D7"</p>
-</div></section>
+</div></section> -->
 <!-- Motivation -->
 <section class="slide"><div>
     <h2>Motivations</h2>
@@ -143,7 +142,7 @@
         <li>A lot of problems can be solved using plugins</li>
     </ul>
     <h3 class="next">It started with plugins, but then it spread!</h3>
-    <div class="next">
+    <div >
         <img src="pictures/plug.png" style="float: right; height:150px; padding-right: 150px;">
         <h2 style="padding-top: 50px;">We created Plug Family</h2>
 
@@ -154,10 +153,10 @@
     <h2>Plug architecture</h2>
     <ul>
         <li>Packagist package created from D8 source code: <strong><a href="https://packagist.org/packages/drupal/d7-plugin">drupal/d7-plugin</a></strong></li>
-        <li>Download and register the package to be used <strong><a href="https://www.drupal.org/project/composer_manager">Composer manager</a></strong></li>
+        <li>Download and register the package to be used via <strong><a href="https://www.drupal.org/project/composer_manager">Composer manager</a></strong></li>
         <li>Plug module provides some glue code to integrate the plugin system</li>
         <ul>
-            <li>Register PSR-4 namespace for classes provided <strong><a href="https://www.drupal.org/project/xautoload">X Autoload</a></strong></li>
+            <li>Register PSR-4 namespace for classes via <strong><a href="https://www.drupal.org/project/xautoload">X Autoload</a></strong></li>
             <li>Base classes to make easier the plugin creation</li>
         </ul>
     </ul>
@@ -167,15 +166,14 @@
     <h2>Plugin discovery types</h2>
         <p><strong>Annotation based plugins</strong><br />Plugin classes are annotated and placed in a defined namespace.</p>
     Class Acme:
-    <pre class=" language-php"><code class="language-php">namespace Drupal\plug_example\Plugin\name;
+    <pre class=" language-php"><code class="language-php">namespace Drupal\plug_example\Plugin\company;
 /**
-* Class Acme
-* @Name(
+* @Company(
 *   id = "acme",
-*   company = TRUE
+*   country = "USA"
 * )
 */
-class Acme extends NameBase implements NameInterface {</code></pre>
+class Acme extends CompanyBase implements CompanyInterface {</code></pre>
 </div></section>
 <!-- Plugin types -->
 <section class="slide"><div>
@@ -191,24 +189,25 @@ class Fruit extends PluginBase implements FruitInterface {</code></pre>
 <!-- Plug Field -->
 <section class="slide"><div>
     <h2>Plug Field</h2>
-    <img src="pictures/spam.jpg" style="float: right; width: 380px; padding-top: 30px;">
+    <!-- <img src="pictures/spam.jpg" style="float: right; width: 380px; padding-top: 30px;"> -->
+    <br />
     <ul>
-      <li>Emulates the Drupal 8 Field System</li>
-      <li>Exposes Field types, widgets and formatters as annotated plugins</li>
-      <li>Provides base classes to extend easily</li>
+      <li>Emulate the Drupal 8 Field System</li>
+      <li>Expose Field types, widgets and formatters as annotated plugins</li>
+      <li>Provide base classes to extend easily</li>
     </ul>
 </div></section>
 <!-- Plug config -->
 <section class="slide"><div>
     <h2>Plug Config</h2>
-    <img src="pictures/spam.jpg" style="float: right; width: 380px; padding-top: 30px;">
+    <!-- <img src="pictures/spam.jpg" style="float: right; width: 380px; padding-top: 30px;"> -->
     <ul>
       <li>Create exportable entities as <strong>annotated plugins</strong></li>
       <li>Wrapper around Drupal 7 entities</li>
       <li>Alternative to CTools plugins:</li>
         <ul>
           <li>Object Oriented Plugins</li>
-          <li>Are real actual entities</li>
+          <li>ActualLY are entities</li>
         </ul>
     <ul>
 </div></section>
@@ -216,16 +215,14 @@ class Fruit extends PluginBase implements FruitInterface {</code></pre>
 <section class="slide"><div>
     <h2>Typed Entity (does not need Plug)</h2>
     <ul>
-      <li>Organize your custom code around entities in objects.</li>
-      <li>Forget <code>my_module_process_article_images($nid)</code>.</li>
-      <li>Use <code>$article->processImage()</code> instead.</li>
+      <li>Organize your custom code around entities in objects</li>
+      <li>Forget <code>my_module_process_article_images($nid)</code></li>
+      <li>Use <code>$article->processImage()</code> instead</li>
     </ul>
     <ul>
-      <li>It's a <strong>very</strong> lightweight module. Can complement Plug.</li>
-      <li>Code easier to maintain.</li>
-      <li>Testable code.</li>
-      <li>More re-use of code: Code is centralized &amp; You can use base classes.</li>
-      <li>Objects are easy to pass around.</li>
+      <li>It's a <strong>very</strong> lightweight module. Can complement Plug</li>
+      <li>More re-use of code: Code is centralized &amp; You can use base classes</li>
+      <li>Objects are easy to pass around</li>
     </ul>
 </div></section>
 <!-- Typed Entity Example -->
@@ -235,8 +232,8 @@ class Fruit extends PluginBase implements FruitInterface {</code></pre>
     <pre class=" language-php"><code class="language-php">namespace Drupal\my_module\TypedEntity;
 class TypedNodeArticle extends TypedNode implements TypedNodeInterface {</code></pre>
     <h3>2. Use that object in your regular Drupal code</h3>
-    <pre class=" language-php"><code class="language-php">function hook_drupalcamp_blow_mind($oop) {
-  $article = TypedEntityManager::create();
+    <pre class=" language-php"><code class="language-php">function hook_drupalcamp_blow_mind($node) {
+  $article = TypedEntityManager::create('node', $node);
   foreach ($article->getRelatedArticles() as $related) {
     // $related->getImage() returns a TypedFileImage!
     $image_urls[] = $related->getImage()->getUrl();
@@ -249,8 +246,8 @@ class TypedNodeArticle extends TypedNode implements TypedNodeInterface {</code><
     <img src="pictures/twistersfooter.png" style="float: right; width: 220px;">
     <h3 style="font-size: 32px;">Somos twisters billing system</h3>
     <ul>
-        <li>Non profit fundraising company</li>
-        <li>Multiple non profit company</li>
+        <li>NGO fundraising company</li>
+        <li>Manage multiple non profit companies</li>
         <li>Complex bonus system for callers</li>
         <li>Multiple roles</li>
     </ul>
@@ -338,17 +335,17 @@ class TypedNodeArticle extends TypedNode implements TypedNodeInterface {</code><
         <li>Get out of Drupal island to learn and improve your skills</li>
     </ul>
     <div class="next">
-        <h2>Thirst for knowledge is basic to be able to be up to date</h2>
+        <h2 style="font-size:45px;">Thirst for knowledge is basic to be up to date</h2>
     </div>
 </div></section>
 <!-- Resources -->
 <section class="slide"><div>
     <h2>Resources</h2>
     <ul>
-        <li><strong>Drupal modules:</strong> XAutoload, Composer Manager, COOL, Typed Entity</li>
-        <li><strong>Plug Repository:</strong> https://github.com/Plug-Drupal</li>
-        <li><strong>Entity Boilerplate Repository:</strong> https://github.com/plopesc/entity_boilerplate</li>
-        <li><strong>Composer to build Drupal 7 projects:</strong> http://cambrico.net/drupal/using-composer-to-build-your-drupal-7-projects</li>
+        <li><strong>Drupal modules:</strong> XAutoload, Composer Manager, Service container, Typed Entity...</li>
+        <li><strong>Plug repository:</strong> https://github.com/Plug-Drupal</li>
+        <li><strong>Entity Boilerplate repository:</strong> https://github.com/plopesc/entity_boilerplate</li>
+        <li><strong>Typed Entity repository:</strong> <br />https://github.com/mateu-aguilo-bosch/typed_entity</li>
     </ul>
 </div></section>
 <!-- Thank you -->
